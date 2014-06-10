@@ -78,6 +78,7 @@
     </div>
     
     <script src="js/vendor/jquery.js"></script>
+    <script src="js/jquery.hidpi-tamer.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>
     	"use strict";
@@ -95,28 +96,8 @@
 		// use this instead, and it'll probably work.
 		$(window).load(function () {
 		
-		// or maybe this, which requires a plugin
-		// $(window).imagesLoaded( function() {
-			var imgObj = new Image();
-
-			// look for retina images (img.retina) and resize them if needed
-			$('#content').find('img').each(function(i, el) {
-				var $img = $(el);
-
-				if (/\-|_2x\./.test(el.src) || $img.hasClass('retina')) {
-
-					imgObj.src = el.src;
-	
-					var width = $img.width(),
-						newWidth = imgObj.width / 2;
-						
-					console.log('width: ' + width + ' and newWidth: ' + newWidth);
-
-					if (width > newWidth) {
-						$img.css('width', newWidth + 'px');
-					}
-				}
-			});
+			$('#content').hiDPITamer();
+		
 		});
     </script>
   </body>
