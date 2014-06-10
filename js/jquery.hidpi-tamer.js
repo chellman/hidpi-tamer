@@ -20,7 +20,7 @@ jQuery.fn.extend({
   	var imgObj = new Image();
   
     return this.each(function() {
-    	// I like to keep track of what this is
+    	// I like to keep track of what "this" is
       var container = this;
       
       // what is this, anyway?
@@ -29,30 +29,19 @@ jQuery.fn.extend({
       
       $(container).find('img').each(function(i, el) {
 				var $img = $(el);
-				
-				console.log(el);
 
-				if (/\-2x\./.test(el.src) || $img.hasClass('retina')) {
-
-
+				if (/\-|_2x\./.test(el.src) || $img.hasClass('retina')) {
 		
 					imgObj.src = el.src;
 
-	
 					var width = $img.width(),
 							newWidth = imgObj.width / 2;
 
-		console.log('width: ' + width);
-		console.log(imgObj);
-		console.log(imgObj.width);
-		console.log(imgObj.naturalWidth);
+					// console.log('width: ' + width + ' and newWidth: ' + newWidth);
 
 					if (width > newWidth) {
 						$img.css('width', newWidth + 'px');
 					}
-					
-					
-					console.log($img);
 				}
 			});
     });
