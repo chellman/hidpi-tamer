@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Plugin Demo</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <style>
+    	#sidebar {
+    		display: none;
+    	}
+    </style>
+  </head>
+  <body>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>jQuery Meetup - 6/11/2014</h1>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+      	<div class="panel">
+	        <h3>Let's Play with Images</h3>
+	        <p>This is a demo page with <a href="http://foundation.zurb.com/">Foundation</a> as the, well, foundation.  Let's dump in some images and write some jQuery!  Yay!</p>
+	        
+	        <p>
+	        Because we're dealing with images, we need to be aware of this plugin: <a href="http://desandro.github.io/imagesloaded/">ImagesLoaded</a>.
+	        </p>
+	        
+	        <p>
+	        <a href="#" class="small round button" id="sidebar-trigger">Toggle Sidebar</a><br/>
+	        </p>
+      	</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="columns" id="content">
+        <h5>Here Not Be Dragons</h5>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="callout panel">
+              <p><strong>We have some really big images below that need to be tamed.</strong> We want the images to be responsive, but not get bigger than their "natural" size.  jQuery can help!</p>
+            </div>
+          </div>
+        </div>
+        
+        <hr />
+        
+        <p>
+        	<img src="img/ipad-screenshot-2x.png" alt="Screenshot of the notes app on an iPad">
+        </p>
+        
+        <p>
+        	<img src="img/iphone-screenshot.png" class="retina" alt="Screenshot of a nerd's iPhone home screen">
+        </p>
+        
+        <p>
+        	<img src="img/Flamingo-3000-40.jpg" alt="A lovely photo from the Apple collection"><br>
+        	This dude will be ignored.  He looks pretty pleased about it.
+        </p>
+        
+      </div>
+
+      <div class="large-4 medium-4 columns" id="sidebar">
+			  <h5>Bright, Candy-like Buttons</h5>
+			  
+			  <p>
+			  	<a href="http://www.meetup.com/jQuery-LA/events/183187142/" class="small alert button">Help! Where am I?!</a><br/>
+				<a href="http://api.jquery.com/jQuery.fn.extend/" class="small radius button">jQuery.fn.extend()</a><br/>
+				<a href="http://www.shooflydesign.org/" class="medium success button">ShooFly</a>
+			  </p>
+      </div>
+    </div>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+    	"use strict";
+    
+		$(document).foundation();
+
+		// can't use this when we're dealing with image dimensions
+		$(document).ready(function () {
+			$('#sidebar-trigger').click(function(){
+				$('#content').toggleClass('large-8').toggleClass('medium-8');
+				$('#sidebar').toggle();
+			});
+		});
+    </script>
+  </body>
+</html>
