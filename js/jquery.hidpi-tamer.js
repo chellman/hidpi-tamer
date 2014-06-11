@@ -15,8 +15,9 @@
 
 "use strict";
 
-jQuery.fn.extend({
-  hiDPITamer: function(options) {
+(function( $ ) {
+
+	$.fn.hiDPITamer = function(options) {
   
   	// default value for opts
   	// not strictly necessarily here - jQuery.extend is smart enough to deal with undefined
@@ -59,5 +60,6 @@ jQuery.fn.extend({
 				}
 			});
     });
-  }
-});
+  };
+ 
+}( jQuery ));
